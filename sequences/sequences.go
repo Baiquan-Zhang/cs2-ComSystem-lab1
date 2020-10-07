@@ -10,6 +10,7 @@ func square(a int) int {
 	return a * a
 }
 
+//append only allocate new arrays, which is passed by value and will be lost once out of scope
 func double(slice []int) []int {
 	slice = append(slice, slice...)
 	return slice
@@ -35,6 +36,8 @@ func main() {
 	mapSlice(addOne, intsSlice)
 	// mapSlice(square, newSlice)
 	intsSlice = double(intsSlice)
+	// fmt.Println(cap(intsSlice))
+	// intsSlice = append(intsSlice, intsSlice...)
 	fmt.Println(newSlice)
 	fmt.Println(intsSlice)
 	intsArray := [3]int{1, 2, 3}
