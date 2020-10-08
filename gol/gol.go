@@ -4,6 +4,13 @@ func calculateNextState(p golParams, world [][]byte) [][]byte {
 	var changeCells []cell
 	var temp cell
 
+	// var newWorld [][]byte
+
+	// for i, column := range world {
+	// 	var newColumn []byte
+	// 	newWorld = append(newWorld, newColumn)
+	// }
+
 	for i, column := range world {
 		for j, pixel := range column {
 			if findNextState(pixel, i, j, p.imageHeight, p.imageWidth, world) {
